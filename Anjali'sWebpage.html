@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Anjali 🌙</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #ffb6c1;
+    }
+
+    #compliment {
+      font-size: 1.2rem;
+      margin: 20px;
+      min-height: 60px;
+      padding: 0 20px;
+      color: #e0e0e0;
+      transition: opacity 0.3s ease;
+    }
+
+    button {
+      background-color: #ff69b4;
+      border: none;
+      color: white;
+      padding: 15px 25px;
+      font-size: 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.1s ease;
+    }
+
+    button:active {
+      transform: scale(0.97);
+      background-color: #ff85c1;
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+      #compliment {
+        font-size: 1rem;
+      }
+      button {
+        font-size: 0.9rem;
+        padding: 12px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Hey Anjali 💖</h1>
+  <div id="compliment">Tap the button below, pretty girl.</div>
+  <button onclick="giveCompliment()">Gimme a Compliment ✨</button>
+
+  <script>
+    const compliments = [
+      "You're like the moon—soft, glowing, and impossible not to stare at.",
+      "The world is better with you in it.",
+      "You light up rooms without even trying.",
+      "You’re effortlessly cool and deeply kind.",
+      "Every time you smile, the universe sighs in relief.",
+      "You're more beautiful than a million sunsets.",
+      "You make existing feel less lonely.",
+      "You’re the kind of person songs are written about.",
+      "You’re the calm in chaos and the chaos in boring days.",
+      "You’re not just pretty—you’re poetry."
+    ];
+
+    function giveCompliment() {
+      const randomIndex = Math.floor(Math.random() * compliments.length);
+      const complimentBox = document.getElementById("compliment");
+      complimentBox.style.opacity = 0;
+      setTimeout(() => {
+        complimentBox.textContent = compliments[randomIndex];
+        complimentBox.style.opacity = 1;
+      }, 200);
+    }
+  </script>
+</body>
+</html>
